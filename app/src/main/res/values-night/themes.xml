@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ShopKeeper" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#1B22C8</item>
+        <item name="colorPrimaryVariant">@color/bluish_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">#1B22C8</item>
+        <item name="colorAccent">#536DFE</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#2F2F2F</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#341AB5</item>
+        <item name="colorSecondaryVariant">@color/bluish_light</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="LoginSignUpForgotTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">#FFFFFF</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#1B22C8</item>
+        <item name="colorPrimaryVariant">@color/bluish_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">#101691</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:textColorPrimary">#212121</item>
+        <item name="android:textColorSecondary">#757575</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#341AB5</item>
+        <item name="colorSecondaryVariant">@color/bluish_light</item>
+        <item name="colorOnSecondary">@color/bluish_light</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="MainMenuTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:colorBackground">#222222</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/loginBackground</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>

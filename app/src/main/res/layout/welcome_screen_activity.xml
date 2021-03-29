@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:screenOrientation="portrait"
+    tools:context=".WelcomeScreen">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/welcomeAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/wave" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/linearLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/selectRoleTextView"-->
+    <!--        tools:layout_editor_absoluteX="0dp">-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ownerRoleButton"-->
+    <!--            android:layout_width="170dp"-->
+    <!--            android:layout_height="150dp"-->
+    <!--            android:layout_marginStart="10dp"-->
+    <!--            android:layout_marginEnd="10dp"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            android:fontFamily="@font/made_tommy_regular"-->
+    <!--            android:paddingTop="20dp"-->
+    <!--            android:text="@string/owner"-->
+    <!--            android:textAllCaps="false"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:icon="@drawable/owner_icon"-->
+    <!--            app:iconGravity="top"-->
+    <!--            app:iconTint="@null"-->
+    <!--            app:cornerRadius="10dp"-->
+    <!--            tools:ignore="ButtonStyle" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/employeeRoleButton"-->
+    <!--            android:layout_width="170dp"-->
+    <!--            android:layout_height="150dp"-->
+    <!--            android:layout_marginStart="10dp"-->
+    <!--            android:layout_marginEnd="10dp"-->
+    <!--            android:backgroundTint="@color/white"-->
+    <!--            android:fontFamily="@font/made_tommy_regular"-->
+    <!--            android:paddingTop="15dp"-->
+    <!--            android:text="@string/employee"-->
+    <!--            android:textAllCaps="false"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:icon="@drawable/employee_icon"-->
+    <!--            app:iconGravity="top"-->
+    <!--            app:iconTint="@null"-->
+    <!--            app:cornerRadius="10dp"-->
+    <!--            tools:ignore="ButtonStyle" />-->
+    <!--    </LinearLayout>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:text="@string/welcome_message"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeAnimation" />
+
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="2dip"
+        android:fontFamily="@font/made_tommy_regular"
+        android:singleLine="true"
+        android:text="@string/continue_text"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/userRoleLogOutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/field_gray"
+        app:strokeWidth="0.4dp" />
+
+    <Button
+        android:id="@+id/userRoleLogOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="2dip"
+        android:fontFamily="@font/made_tommy_regular"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:singleLine="true"
+        android:text="@string/log_out"
+        android:textAllCaps="false"
+        android:textColor="@color/declineRed"
+        android:textSize="16sp"
+        app:icon="@drawable/logout_icon"
+        app:iconGravity="start"
+        app:iconTint="@null"
+        app:iconPadding="10dp"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/field_gray"
+        app:strokeWidth="0.4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

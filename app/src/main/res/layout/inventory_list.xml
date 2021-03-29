@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/inventoryItemNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/inventoryEditButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inventoryItemIDTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#353131"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/inventoryItemNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryItemNameTextView" />
+
+    <Button
+        android:id="@+id/inventoryEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#FFFFF7"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:fontFamily="@font/made_tommy_regular"
+        android:text="@string/edit_string"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_desaturated_blue"
+        android:textSize="16sp"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/bluish"
+        app:strokeWidth="0.2dp" />
+
+    <Button
+        android:id="@+id/inventoryDeleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#FFFFF7"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:fontFamily="@font/made_tommy_regular"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textColor="@color/declineRed"
+        android:textSize="16sp"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryEditButton"
+        app:strokeColor="@color/declineRed"
+        app:strokeWidth="0.2dp" />
+
+    <TextView
+        android:id="@+id/inventoryItemPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#353131"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/inventoryItemIDTextView"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryItemIDTextView" />
+
+    <TextView
+        android:id="@+id/inventoryItemQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#353131"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/inventoryItemPriceTextView"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryItemPriceTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

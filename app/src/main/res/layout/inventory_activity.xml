@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/snow"
+    android:orientation="vertical"
+    tools:context=".main.Inventory">
+
+
+    <TextView
+        android:id="@+id/inventoryLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/inventory_string"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/search_background"
+        android:elevation="2dp"
+        android:hint="Search"
+        android:imeOptions="actionSearch"
+        android:lines="1"
+        android:paddingStart="20dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:singleLine="true"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sortButton"
+        app:layout_constraintWidth_percent=".8" />
+
+
+    <ImageView
+        android:id="@+id/inventorySearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/search_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/searchEditText"
+        app:layout_constraintStart_toEndOf="@+id/searchEditText"
+        app:layout_constraintTop_toTopOf="@+id/searchEditText"
+        app:tint="@color/field_gray" />
+
+    <TextView
+        android:id="@+id/totalProductLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/total_products_string"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryLabelTextView" />
+
+    <TextView
+        android:id="@+id/totalProductCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/totalProductLabel"
+        app:layout_constraintTop_toBottomOf="@+id/inventoryLabelTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sortButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/name_string"
+        android:textAllCaps="false"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/sortByText"
+        app:layout_constraintTop_toBottomOf="@+id/totalProductLabel" />
+
+    <ScrollView
+        android:id="@+id/inventoryMainFrameScrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryScrollView">
+
+
+        <LinearLayout
+            android:id="@+id/inventoryListLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/sortByText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/sort_by"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalProductLabel" />
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/fabSpeedDialAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:fabBackgroundTint="@color/loginBackground"
+        app:fabDrawableTint="@color/white"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/additem_fab_speeddial"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="@+id/inventoryMainFrameScrollLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:miniFabBackgroundTint="@color/dark_desaturated_blue"
+        app:miniFabDrawableTint="@color/white"
+        app:miniFabTitleBackgroundTint="@color/white" />
+
+    <HorizontalScrollView
+        android:id="@+id/categoryScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText">
+
+        <LinearLayout
+            android:id="@+id/categoryLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+
+            <Button
+                android:id="@+id/categorySelectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/made_tommy_regular"
+                android:singleLine="true"
+                android:text="@string/all_string"
+                android:textColor="@color/black"
+                app:cornerRadius="5dp"
+                app:strokeColor="@color/field_gray"
+                app:strokeWidth="0.2dp" />
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--        android:id="@+id/floatingAddButton"-->
+    <!--        style="@style/Widget.MaterialComponents.FloatingActionButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="30dp"-->
+    <!--        android:layout_marginBottom="30dp"-->
+    <!--        android:backgroundTint="@color/loginBackground"-->
+    <!--        android:clickable="true"-->
+    <!--        android:elevation="5dp"-->
+    <!--        android:focusable="true"-->
+    <!--        app:fabSize="auto"-->
+    <!--        app:icon="@drawable/add_24dp"-->
+    <!--        app:iconTint="@color/white"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:rippleColor="@color/white" />-->
+
+
+    <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--        android:id="@+id/floatingAddInventoryButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:backgroundTint="@color/bluish"-->
+    <!--        android:elevation="5dp"-->
+    <!--        android:text="Inventory"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:fabSize="auto"-->
+    <!--        app:icon="@drawable/manage_inventory_icon"-->
+    <!--        app:iconGravity="textEnd"-->
+    <!--        app:iconTint="@color/white"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/floatingAddButton"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/floatingAddButton"-->
+    <!--        app:rippleColor="@color/bluish_light" />-->
+
+    <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--        android:id="@+id/floatingAddCategoryButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:backgroundTint="@color/bluish"-->
+    <!--        android:text="Category"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:fabSize="auto"-->
+    <!--        app:icon="@drawable/category_24dp"-->
+    <!--        app:iconGravity="textEnd"-->
+    <!--        app:iconTint="@color/white"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/floatingAddInventoryButton"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/floatingAddInventoryButton"-->
+    <!--        app:rippleColor="@color/bluish_light" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

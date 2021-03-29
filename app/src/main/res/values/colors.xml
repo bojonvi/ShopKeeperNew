@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="bluish">#73A8E9</color>
+    <color name="bluish_light">#91C2FF</color>
+    <color name="burlywood">#DEB887</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="darkmode_black">#FFFFFF</color>
+    <color name="dark_desaturated_blue">#2B3E54</color>
+    <color name="declineRed">#CE435C</color>
+    <color name="field_gray">#333331</color>
+    <color name="goldenrod">#DAA520</color>
+    <color name="lawngreen">#7CFC00</color>
+    <color name="limegreen">#32CD32</color>
+    <color name="loginBackground">#1B22C8</color>
+    <color name="snow">#FBFBFB</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="wheat">#F5DEB3</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

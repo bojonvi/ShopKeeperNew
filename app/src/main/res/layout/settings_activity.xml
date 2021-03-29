@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/snow"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+
+    <LinearLayout
+        android:id="@+id/appVersionLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:elevation="0.5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoBanner">
+
+        <TextView
+            android:id="@+id/versionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:background="@null"
+            android:fontFamily="@font/made_tommy_regular"
+            android:layout_weight="1"
+            android:text="@string/app_version"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/versionNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/made_tommy_regular"
+            android:gravity="end|center"
+            android:textColor="@color/field_gray"
+            android:textSize="16sp" />
+
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="5dp"-->
+        <!--            android:layout_marginEnd="5dp"-->
+        <!--            android:background="@drawable/navigate_next_24dp"-->
+        <!--            android:backgroundTint="@color/black"-->
+        <!--            android:contentDescription="@string/email_address" />-->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logoBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shopkeeper_permisison_header_black" />
+
+    <TextView
+        android:id="@+id/themeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@null"
+        android:fontFamily="@font/made_tommy_regular"
+        android:text="@string/theme_select"
+        android:textColor="@color/field_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appVersionLinearLayout" />
+
+    <Button
+        android:id="@+id/lightThemeTriggerButton"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/made_tommy_regular"
+        android:text="@string/light"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintStart_toEndOf="@+id/themeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/appVersionLinearLayout" />
+
+    <Button
+        android:id="@+id/darkThemeTriggerButton"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@android:color/background_dark"
+        android:fontFamily="@font/made_tommy_regular"
+        android:singleLine="true"
+        android:text="@string/dark"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lightThemeTriggerButton"
+        app:layout_constraintTop_toBottomOf="@+id/appVersionLinearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

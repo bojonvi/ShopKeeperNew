@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mcmcourseproject.shopkeeper">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <compatible-screens>
+
+        <!-- all small size screens -->
+        <!-- <screen android:screenSize="small" android:screenDensity="ldpi" /> &lt;!&ndash; 120 &ndash;&gt; -->
+        <!-- <screen android:screenSize="small" android:screenDensity="mdpi" /> &lt;!&ndash; 160 &ndash;&gt; -->
+        <!-- <screen android:screenSize="small" android:screenDensity="hdpi" /> &lt;!&ndash; 240 &ndash;&gt; -->
+        <screen
+            android:screenDensity="280"
+            android:screenSize="small" /> <!-- Workaround -->
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="small" /> <!-- 320 -->
+        <screen
+            android:screenDensity="360"
+            android:screenSize="small" /> <!-- Workaround -->
+        <screen
+            android:screenDensity="420"
+            android:screenSize="small" /> <!-- Workaround Google Pixel, Nexus 5x -->
+        <screen
+            android:screenDensity="xxhdpi"
+            android:screenSize="small" /> <!-- 480 -->
+        <screen
+            android:screenDensity="560"
+            android:screenSize="small" /> <!-- Workaround Google Pixel XL, Nexus 6, Nexus 6P -->
+        <screen
+            android:screenDensity="xxxhdpi"
+            android:screenSize="small" /> <!-- 640 -->
+        <!-- all normal size screens -->
+        <!-- <screen android:screenSize="normal" android:screenDensity="ldpi" /> &lt;!&ndash; 120 &ndash;&gt; -->
+        <!-- <screen android:screenSize="normal" android:screenDensity="mdpi" /> &lt;!&ndash; 160 &ndash;&gt; -->
+        <!-- <screen android:screenSize="normal" android:screenDensity="hdpi" /> &lt;!&ndash; 240 &ndash;&gt; -->
+        <screen
+            android:screenDensity="280"
+            android:screenSize="normal" /> <!-- Workaround -->
+        <screen
+            android:screenDensity="xhdpi"
+            android:screenSize="normal" /> <!-- 320 -->
+        <screen
+            android:screenDensity="360"
+            android:screenSize="normal" /> <!-- Workaround -->
+        <screen
+            android:screenDensity="420"
+            android:screenSize="normal" /> <!-- Workaround Google Pixel, Nexus 5x -->
+        <screen
+            android:screenDensity="xxhdpi"
+            android:screenSize="normal" /> <!-- 480 -->
+        <screen
+            android:screenDensity="560"
+            android:screenSize="normal" /> <!-- Workaround Google Pixel XL, Nexus 6, Nexus 6P -->
+        <screen
+            android:screenDensity="xxxhdpi"
+            android:screenSize="normal" /> <!-- 640 -->
+    </compatible-screens>
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ShopKeeper">
+        <activity android:name=".AboutShopKeeper"></activity>
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:layoutDirection="ltr" />
+        <activity
+            android:name=".StoreSettings"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".GuestSignUp"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity android:name=".GuestLogin" />
+        <activity
+            android:name=".LogItem"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity android:name=".ManageSales" />
+        <activity
+            android:name=".CheckLogs"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".Suppliers"
+            android:layoutDirection="ltr"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".Category"
+            android:layoutDirection="ltr"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".PermissionSettings"
+            android:layoutDirection="ltr"
+            android:theme="@style/LoginSignUpForgotTheme" />
+        <activity
+            android:name=".main.Inventory"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" />
+        <activity
+            android:name=".main.AddItem"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainMenuTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".main.CheckOutItem"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainMenuTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".RegisterStore"
+            android:theme="@style/MainMenuTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WelcomeScreen"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme" />
+        <activity
+            android:name=".main.MainMenuOwner"
+            android:layoutDirection="ltr"
+            android:theme="@style/MainMenuTheme"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".user_authentication.ForgotPasswordActivity"
+            android:layoutDirection="ltr"
+            android:theme="@style/LoginSignUpForgotTheme" />
+        <activity
+            android:name=".user_authentication.SignupActivity"
+            android:layoutDirection="ltr"
+            android:theme="@style/LoginSignUpForgotTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".user_authentication.LoginActivity"
+            android:layoutDirection="ltr"
+            android:theme="@style/LoginSignUpForgotTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+    </application>
+
+</manifest>

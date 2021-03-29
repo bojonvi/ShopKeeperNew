@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/floatingAddInventoryButton"
+        android:icon="@drawable/manage_inventory_icon"
+        android:title="@string/inventory_string"/>
+    <item
+        android:id="@+id/floatingAddCategoryButton"
+        android:icon="@drawable/category_24dp"
+        android:title="@string/category_string"/>
+</menu>
