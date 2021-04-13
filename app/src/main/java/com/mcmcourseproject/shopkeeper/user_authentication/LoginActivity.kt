@@ -172,9 +172,21 @@ class LoginActivity : AppCompatActivity() {
 //                    val userEmail = auth.currentUser!!.email
 //                    val userID = auth.currentUser!!.uid
 //                    checkUserDatabase(userID, userEmail!!)
-                    startActivity(Intent(this, SplashScreenActivity::class.java))
-                    overridePendingTransition(R.anim.slide_up_in, R.anim.slide_up_out)
-                    finish()
+                    val user = auth.currentUser!!
+                    if (!user.isEmailVerified) {
+                        user.sendEmailVerification()
+                            .addOnCompleteListener {
+                                Toast.makeText(
+                                    baseContext, "Your email is still not been verified! Please check your Email Inbox!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                Firebase.auth.signOut()
+                            }
+                    } else {
+                        startActivity(Intent(this, SplashScreenActivity::class.java))
+                        overridePendingTransition(R.anim.slide_up_in, R.anim.slide_up_out)
+                        finish()
+                    }
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("TAG", "signInWithEmail:failure", task.exception)

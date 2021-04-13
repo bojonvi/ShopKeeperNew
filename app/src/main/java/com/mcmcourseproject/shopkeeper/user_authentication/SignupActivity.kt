@@ -67,7 +67,7 @@ class SignupActivity : AppCompatActivity() {
             } else if (TextUtils.isEmpty(confirmPass)) {
                 binding.registerConfirmPasswordField.error = "The confirm password must not be empty!"
             } else if (!email.isValidEmail()) {
-                binding.registerPasswordField.error = "Please input a valid email address!"
+                binding.registerEmailField.error = "Please input a valid email address!"
             } else {
                 signUpFun(email, pass, confirmPass)
             }
@@ -85,42 +85,39 @@ class SignupActivity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this) { signUpTask ->
                         if (signUpTask.isSuccessful) {
-//   This commented part is the email verification process, I temporarily disabled it
-//                                  auth.currentUser?.sendEmailVerification()
-//                                   ?.addOnCompleteListener(this) { theTask ->
-//                                   if (theTask.isSuccessful) {
-                                                Toast.makeText(this, "Account Created Successfully!", Toast.LENGTH_SHORT).show()
-                                                Firebase.auth.signOut()
-                                                startActivity(Intent(this, LoginActivity::class.java))
-                                                finish()
-//                                            } else {
-//                                                Toast.makeText(  this,
-//                                                 "There was an error creating the account: " + theTask.exception,
-//                                                 Toast.LENGTH_LONG).show() }
-//                                        }
-                            } else if (!signUpTask.isSuccessful) {
-                                try {
-                                    throw signUpTask.exception!!
-                                } catch (e: FirebaseAuthUserCollisionException) {
-                                    Toast.makeText(
-                                            this,
-                                            "The account [ $email ] has been already registered in the System.",
-                                            Toast.LENGTH_LONG).show()
-                                } catch (e: FirebaseAuthWeakPasswordException) {
-                                    Toast.makeText(
-                                            this,
-                                            "Weak Password. Input at-least 6 characters.",
-                                            Toast.LENGTH_LONG).show()
-                                } catch (e: FirebaseAuthEmailException) {
-                                    Log.e(this.toString(), e.message.toString())
+                            val user = auth.currentUser
+                            user.sendEmailVerification()
+                                .addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        Toast.makeText(this, "A verification mail has sent to your email!", Toast.LENGTH_SHORT).show()
+                                    }
+                                    Firebase.auth.signOut()
+                                    startActivity(Intent(this, LoginActivity::class.java))
+                                    finish()
                                 }
-                            } else {
+                        } else if (!signUpTask.isSuccessful) {
+                            try {
+                                throw signUpTask.exception!!
+                            } catch (e: FirebaseAuthUserCollisionException) {
                                 Toast.makeText(
                                         this,
-                                        "Account is unable to register. Please try again. \n" + signUpTask.exception,
-                                        Toast.LENGTH_SHORT).show()
+                                        "The account [ $email ] has been already registered in the System.",
+                                        Toast.LENGTH_LONG).show()
+                            } catch (e: FirebaseAuthWeakPasswordException) {
+                                Toast.makeText(
+                                        this,
+                                        "Weak Password. Input at-least 6 characters.",
+                                        Toast.LENGTH_LONG).show()
+                            } catch (e: FirebaseAuthEmailException) {
+                                Log.e(this.toString(), e.message.toString())
                             }
+                        } else {
+                            Toast.makeText(
+                                    this,
+                                    "Account is unable to register. Please try again. \n" + signUpTask.exception,
+                                    Toast.LENGTH_SHORT).show()
                         }
+                    }
             }
         } else {
             val internetValidationDialogInterface = AlertDialog.Builder(this)
